@@ -8,6 +8,7 @@ struct ContentView: View {
     @State private var feedbackSymbol: String? = nil
     @State private var showAlert = false
     @State private var timer: Timer? = nil
+    @State private var timeRemaining = 5.0
 }
 
 #Preview {
