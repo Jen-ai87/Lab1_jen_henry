@@ -16,7 +16,53 @@ struct ContentView: View {
                 .ignoresSafeArea()
             
             VStack(spacing: 30) {
-                
+                Spacer()
+
+                Text("\(currentNumber)")
+                    .font(.system(size: 80, weight: .regular, design: .serif))
+                    .italic()
+                    .foregroundColor(.white)
+
+                Spacer()
+                    .frame(height: 20)
+
+                Button(action: {
+                    checkAnswer(userSaidPrime: true)
+                }) {
+                    Text("Prime")
+                        .font(.system(size: 30, weight: .regular, design: .serif))
+                        .italic()
+                        .foregroundColor(.white)
+                }
+
+                Button(action: {
+                    checkAnswer(userSaidPrime: false)
+                }) {
+                    Text("non Prime")
+                        .font(.system(size: 30, weight: .regular, design: .serif))
+                        .italic()
+                        .foregroundColor(.white)
+                }
+
+                Spacer()
+                    .frame(height: 20)
+
+                if let symbol = feedbackSymbol {
+                    if symbol == "checkmark" {
+                        Image(systemName: "checkmark")
+                            .font(.system(size: 80, weight: .bold))
+                            .foregroundColor(.green)
+                    } else {
+                        Image(systemName: "xmark")
+                            .font(.system(size: 80, weight: .bold))
+                            .foregroundColor(.red)
+                    }
+                } else {
+                    Spacer()
+                        .frame(height: 80)
+                }
+
+                Spacer()
             }
         }
         .onAppear {
