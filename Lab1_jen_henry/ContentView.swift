@@ -27,7 +27,29 @@ struct ContentView: View {
     }
 
     func checkAnswer(userSaidPrime: Bool) {
-       
+       timer?.invalidate()
+
+        let correct = isPrime(currentNumber)
+
+        if userSaidPrime == correct {
+            correctCount += 1
+            feedbackSymbol = "checkmark"
+        } else {
+            wrongCount += 1
+            feedbackSymbol = "xmark"
+        }
+
+        totalAttempts += 1
+
+        if totalAttempts % 10 == 0 {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+                showAlert = true
+            }
+        } else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+                generateNewNumber()
+            }
+        }
     }
 
     func timeExpired() {
