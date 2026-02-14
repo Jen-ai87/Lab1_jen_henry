@@ -9,6 +9,10 @@ struct ContentView: View {
     @State private var showAlert = false
     @State private var timer: Timer? = nil
     @State private var timeRemaining = 5.0
+
+    var body: some View {
+        
+    }
 }
 
 #Preview {
