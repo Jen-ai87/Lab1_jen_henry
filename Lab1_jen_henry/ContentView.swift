@@ -17,6 +17,16 @@ struct ContentView: View {
         .onAppear {
             startTimer()
         }
+        .alert("Results", isPresented: $showAlert) {
+            Button("Play Again") {
+                correctCount = 0
+                wrongCount = 0
+                totalAttempts = 0
+                generateNewNumber()
+            }
+        } message: {
+            Text("Correct answers: \(correctCount)\nWrong answers: \(wrongCount)")
+        }
         
     }
 
