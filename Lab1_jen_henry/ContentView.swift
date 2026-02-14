@@ -76,7 +76,11 @@ struct ContentView: View {
     }
 
     func startTimer() {
-        
+        timer?.invalidate()
+        timeRemaining = 5.0
+        timer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false) { _ in
+            timeExpired()
+        }
     }
 }
 
