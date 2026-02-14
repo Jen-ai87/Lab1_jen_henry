@@ -53,7 +53,19 @@ struct ContentView: View {
     }
 
     func timeExpired() {
-       
+       wrongCount += 1
+        totalAttempts += 1
+        feedbackSymbol = "xmark"
+
+        if totalAttempts % 10 == 0 {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+                showAlert = true
+            }
+        } else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+                generateNewNumber()
+            }
+        }
     }
 
     func generateNewNumber() {
