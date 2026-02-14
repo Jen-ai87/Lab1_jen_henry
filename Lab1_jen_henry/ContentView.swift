@@ -11,6 +11,26 @@ struct ContentView: View {
     @State private var timeRemaining = 5.0
 
     var body: some View {
+
+    }
+
+    func isPrime(_ n: Int) -> Bool {
+       
+    }
+
+    func checkAnswer(userSaidPrime: Bool) {
+       
+    }
+
+    func timeExpired() {
+       
+    }
+
+    func generateNewNumber() {
+       
+    }
+
+    func startTimer() {
         
     }
 }
