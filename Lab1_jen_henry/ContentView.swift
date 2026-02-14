@@ -11,7 +11,13 @@ struct ContentView: View {
     @State private var timeRemaining = 5.0
 
     var body: some View {
-
+         ZStack {
+           
+        }
+        .onAppear {
+            startTimer()
+        }
+        
     }
 
     func isPrime(_ n: Int) -> Bool {
