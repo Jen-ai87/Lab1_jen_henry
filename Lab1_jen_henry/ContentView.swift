@@ -69,7 +69,10 @@ struct ContentView: View {
     }
 
     func generateNewNumber() {
-       
+       currentNumber = Int.random(in: 2...100)
+        feedbackSymbol = nil
+        timeRemaining = 5.0
+        startTimer()
     }
 
     func startTimer() {
